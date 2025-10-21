@@ -1,0 +1,12 @@
+# railway.toml - Railway deployment configuration
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "python web_main.py"
+healthcheckPath = "/health"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+
+[env]
+PYTHON_VERSION = "3.11"
